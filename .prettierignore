@@ -1,0 +1,6 @@
+node_modules/
+dist/
+pkg/
+.yarn/
+yarn.lock
+*.tgz

@@ -1,0 +1,40 @@
+{
+	"name": "companion-surface-ramiaudio-cartridge3",
+	"version": "1.0.0",
+	"description": "Bitfocus Companion surface module for the RAmi Audio Cartridge (32 RGB keys, Ethernet)",
+	"main": "dist/main.js",
+	"type": "module",
+	"scripts": {
+		"build": "rimraf dist && tsc -p tsconfig.build.json",
+		"dev": "tsc -p tsconfig.build.json --watch",
+		"test": "yarn build && node --test \"test/*.test.mjs\"",
+		"lint:raw": "eslint",
+		"lint": "yarn lint:raw .",
+		"format": "prettier -w .",
+		"package": "yarn build && companion-surface-build",
+		"sim": "node tools/cartridge-sim.mjs"
+	},
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/bitfocus/companion-surface-ramiaudio-cartridge3.git"
+	},
+	"engines": {
+		"node": "^22.21 || ^24",
+		"yarn": "^4"
+	},
+	"dependencies": {
+		"@companion-surface/base": "~1.3.0"
+	},
+	"devDependencies": {
+		"@companion-module/tools": "^3.1.0",
+		"@types/node": "^22.0.0",
+		"eslint": "^9.39.4",
+		"prettier": "^3.9.5",
+		"rimraf": "^6.1.3",
+		"typescript": "~6.0.3",
+		"typescript-eslint": "^8.63.0"
+	},
+	"prettier": "@companion-module/tools/.prettierrc.json",
+	"packageManager": "yarn@4.17.0"
+}
